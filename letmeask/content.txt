@@ -1,0 +1,7 @@
+Componentes => são as funções;
+
+Propriedade => são os atributos das tags ou o children(conteúdo);
+
+Estado => são valores que são necessários serem armazenados e/ou alterados em tempo de execução,
+utiliza o conceito de imutabilidade, ou seja, não se altera o valor do estado e sim cria-se um novo (setNomeDoEstado),
+baseado ou não no antigo;
