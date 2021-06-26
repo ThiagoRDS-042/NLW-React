@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { auth, firebase } from "../services/firebase";
+import "../styles/spinner.scss";
 
 type User = {
   id: string;
@@ -20,6 +21,7 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
   const [user, setUser] = useState<User>();
+  const [loading, setLoading] = useState(true);
 
   // assim dispara sempre que o user mudar
   // useEffect(() => {}, [user]);
@@ -39,6 +41,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
           name: displayName,
           avatar: photoURL,
         });
+        setLoading(false);
       }
 
       return () => {
@@ -66,6 +69,11 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       });
     }
   }
+
+  if (loading) {
+    return <div className="spinner"></div>;
+  }
+
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>
       {props.children}
