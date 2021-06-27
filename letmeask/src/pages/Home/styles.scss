@@ -11,8 +11,16 @@
     main {
       background: #34495e;
 
-      .main-content svg path.dark {
+      svg path.dark {
         fill: #c8d6e5;
+      }
+
+      .main-content h2 {
+        color: #f1f1f1;
+      }
+
+      .main-content p {
+        color: #bdc3c7;
       }
     }
   }

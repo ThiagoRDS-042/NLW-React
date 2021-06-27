@@ -6,7 +6,7 @@ import { ToggleSwitch } from "../../components/ToggleSwitch/index";
 import { useAuth } from "../../hooks/useAuth";
 import { useTheme } from "../../hooks/userTheme";
 import { database } from "../../services/firebase";
-import "../Room/styles.scss";
+import "../Home/styles.scss";
 
 export function NewRoom() {
   const { user } = useAuth();

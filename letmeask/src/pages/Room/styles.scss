@@ -1,14 +1,36 @@
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
 #page-room {
+  min-height: 100vh;
+
   transition: 0.3s;
+
   &.dark {
     background: #34495e;
 
-    header {
-      .content {
-        > svg path.dark {
-          fill: #c8d6e5;
-        }
-      }
+    header .content > svg path.dark {
+      fill: #c8d6e5;
+    }
+
+    main .room-title h1 {
+      color: #fff;
+    }
+
+    form .form-footer .user-info span {
+      color: #bdc3c7;
+    }
+
+    .question.highlighted {
+      background: #f4f0ff;
+      border: 3px solid #835afd;
     }
   }
 

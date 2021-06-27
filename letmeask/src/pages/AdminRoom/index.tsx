@@ -1,18 +1,17 @@
+import { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import deleteImg from "../../assets/images/delete.svg";
-import checkImg from "../../assets/images/check.svg";
 import answerImg from "../../assets/images/answer.svg";
+import checkImg from "../../assets/images/check.svg";
+import deleteImg from "../../assets/images/delete.svg";
 import { Button } from "../../components/Button/index";
-import { useAuth } from "../../hooks/useAuth";
 import { Question } from "../../components/Question/index";
 import { RoomCode } from "../../components/RoomCode/index";
+import { ToggleSwitch } from "../../components/ToggleSwitch/index";
+import { useAuth } from "../../hooks/useAuth";
 import { useRoom } from "../../hooks/userRoom";
+import { useTheme } from "../../hooks/userTheme";
 import { database } from "../../services/firebase";
 import "../Room/styles.scss";
-import { useEffect } from "react";
-
-import { ToggleSwitch } from "../../components/ToggleSwitch/index";
-import { useTheme } from "../../hooks/userTheme";
 
 type RoomParams = {
   id: string;
