@@ -22,7 +22,7 @@ export function Room() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { questions, title } = useRoom(roomId);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (!user) {
@@ -39,10 +39,6 @@ export function Room() {
       }
     });
   }, [roomId, history]);
-
-  function handleToggleTheme() {
-    toggleTheme();
-  }
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -190,7 +186,7 @@ export function Room() {
           <RoomCode code={roomId} />
         </div>
       </header>
-      <ToggleSwitch onClick={handleToggleTheme} />
+      <ToggleSwitch />
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>

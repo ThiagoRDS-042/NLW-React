@@ -1,3 +1,8 @@
+html {
+  /* a cada 1rem será considera 10px */
+  font-size: 62.5%;
+}
+
 #page-auth {
   display: flex;
   align-items: stretch;
@@ -27,6 +32,7 @@
 
   aside {
     flex: 7;
+    min-height: 100vh;
 
     background: #835afd;
     color: #fff;
@@ -40,25 +46,30 @@
     transition: 0.3s;
 
     img {
+      margin: auto;
+      width: 100%;
       max-width: 320px;
     }
 
     strong {
-      font: 700 25px "Popins", sans-serif;
-      line-height: 42px;
+      font: 700 2.5rem "Popins", sans-serif;
+      line-height: 4.2rem;
       margin-top: 16px;
+      text-align: center;
     }
 
     p {
-      font-size: 20px;
-      line-height: 32px;
+      font-size: 2rem;
+      line-height: 3.2rem;
       margin-top: 16px;
       color: #f8f8f8;
+      text-align: center;
     }
   }
 
   main {
     flex: 9;
+    min-height: 100vh;
 
     padding: 0 32px;
 
@@ -82,7 +93,7 @@
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 2.4rem;
       margin: 64px 0 24px 0;
       font-family: "Popins", sans-serif;
     }
@@ -107,7 +118,7 @@
     }
 
     p {
-      font-size: 14px;
+      font-size: 1.4rem;
       color: #737380;
       margin-top: 16px;
 
@@ -120,6 +131,7 @@
   .create-room {
     margin-top: 64px;
     height: 50px;
+    font-size: 1.4rem;
     border-radius: 8px;
     font-weight: 500;
     background: #ea4335;
@@ -144,7 +156,7 @@
   }
 
   .separator {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #a8a8b3;
 
     margin: 32px 0;
@@ -165,6 +177,24 @@
       height: 1px;
       background: #a8a8b3;
       margin-left: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #page-auth {
+    aside {
+      padding: 60px 20px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  #page-auth {
+    flex-direction: column;
+
+    aside {
+      text-align: center;
     }
   }
 }

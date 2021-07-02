@@ -12,11 +12,7 @@ export function NewRoom() {
   const { user } = useAuth();
   const history = useHistory();
   const [newRoom, setNewRoom] = useState("");
-  const { theme, toggleTheme } = useTheme();
-
-  function handleToggleTheme() {
-    toggleTheme();
-  }
+  const { theme } = useTheme();
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
@@ -41,7 +37,7 @@ export function NewRoom() {
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
-      <ToggleSwitch onClick={handleToggleTheme} />
+      <ToggleSwitch />
       <main>
         <div className="main-content">
           <svg

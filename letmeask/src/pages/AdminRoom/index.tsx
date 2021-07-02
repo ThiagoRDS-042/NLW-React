@@ -23,17 +23,13 @@ export function AdminRoom() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { questions, title } = useRoom(roomId);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (!user) {
       history.push("/");
     }
   }, [user, history]);
-
-  function handleToggleTheme() {
-    toggleTheme();
-  }
 
   async function handleCloseRoom() {
     await database.ref(`rooms/${roomId}`).update({
@@ -169,7 +165,7 @@ export function AdminRoom() {
           </div>
         </div>
       </header>
-      <ToggleSwitch onClick={handleToggleTheme} />
+      <ToggleSwitch />
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>

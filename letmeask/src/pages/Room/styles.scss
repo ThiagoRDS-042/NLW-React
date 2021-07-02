@@ -64,13 +64,14 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
-  .toggle {
-    top: 18%;
+  .switch_container {
+    position: absolute;
+    top: 120px;
   }
 
   main {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 80%;
+    margin: 50px auto;
 
     .room-title {
       margin: 32px 0 24px;
