@@ -1,23 +1,30 @@
 import { ButtonHTMLAttributes, useState } from "react";
-import cx from "classnames";
+import { useTheme } from "../../hooks/userTheme";
 import "./styles.scss";
 
 type ToggleSwitchProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function ToggleSwitch(props: ToggleSwitchProps) {
+  const { theme, toggleTheme } = useTheme();
   const [toggleSwitchActive, setToggleSwitchActive] = useState(
-    localStorage.getItem("theme") === "dark"
+    localStorage.getItem("theme")
   );
 
   function handleToggleSwitch() {
-    setToggleSwitchActive(toggleSwitchActive ? false : true);
+    setToggleSwitchActive(theme === "light" ? "dark" : "light");
+    toggleTheme();
   }
 
   return (
-    <div onClick={handleToggleSwitch} className="toggle">
-      <button className={cx({ active: toggleSwitchActive })} {...props}>
-        <span className="toggle-switch"></span>
-      </button>
+    <div className="switch_container">
+      <input
+        id="switch-shadow"
+        onChange={handleToggleSwitch}
+        className="switch"
+        type="checkbox"
+        checked={toggleSwitchActive === "dark"}
+      />
+      <label htmlFor="switch-shadow"></label>
     </div>
   );
 }

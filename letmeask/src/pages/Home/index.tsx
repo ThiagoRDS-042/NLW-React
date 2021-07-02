@@ -13,11 +13,7 @@ export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
   const [roomCode, setRoomCode] = useState("");
-  const { theme, toggleTheme } = useTheme();
-
-  function handleToggleTheme() {
-    toggleTheme();
-  }
+  const { theme } = useTheme();
 
   async function handleCreateRoom() {
     if (!user) {
@@ -60,7 +56,7 @@ export function Home() {
         <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
       <main>
-        <ToggleSwitch onClick={handleToggleTheme} />
+        <ToggleSwitch />
         <div className="main-content">
           <svg
             width="157"
